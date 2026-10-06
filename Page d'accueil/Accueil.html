@@ -1,3 +1,4 @@
+<!--On commence par les paramètres de la page-->
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -6,10 +7,14 @@
         <title>Bien investir</title>
             <link rel="stylesheet" href="style.css">
     </head>
+
+    <!--Ensuite on va venir construire le header avec le titre et une liste qui permettra de créer le menu vers les différentes pages principales du sites
+        On oubliera pas l'appel à l'action à la fin. Pour chaque partie on créé des balises pour faciliter le travail en CSS-->
     <body>
         <header>
             <h1>Invest&You</h1>
         </header>
+
         <nav>
             <div class="table">
                 <ul>
@@ -19,6 +24,9 @@
                     <li class="menu-qui">
                         <a href="Qui-sommes-nous.html">Qui sommes nous ?</a>
                     </li class="menu-ress">
+                    <li class="menu-actus">
+                        <a href="Actus.html">Actus</a>
+                    </li class="menu-ress">
                     <li>
                         <a href="Ressources.html">Ressources</a>
                     </li>
@@ -26,55 +34,160 @@
                         <a href="Contact.html">Contact</a>
                     </li>
                     <li class="menu-pre">
-                        <a href="Contact.html">Prendre RDV</a> <!--Voir vidéo 10'30-->
+                        <a href="Contact.html">Prendre RDV</a> 
                     </li>
                 </ul>
             </div>
         </nav>
+
+        <!--Création d'une section pour la première partie de la page : image de fond, texte marketing et un CTA-->
         <article>
             <section class="présentation1">
-                <div class="imagefond">
-
-                </div>
                 <div class="miseenavant">
-                    <p class="ligne1">Investissement & Patrimoine</p>
-                    <p class="ligne2">Investir en 2026<br> n'est plus une option,<br> c'est une nécessité</p>
-                    <p class="ligne3">Dans un monde en constante évolution, bien investir<br> aujourd'hui, c'est se donner les moyens de réaliser<br> ses projets de demain</p>
+                    <h1 class="ligne1">Investissement & Patrimoine</h1>
+                    <h2 class="ligne2">Investir en 2026<br> n'est plus une option,<br> c'est une nécessité</h2>
+                    <h3 class="ligne3">Dans un monde en constante évolution, bien investir<br> aujourd'hui, c'est se donner les moyens de réaliser<br> ses projets de demain</h3>
+                    <a href="Ressources.html">Découvrir nos conseils</a>
+                </div>
+            </section>
+        </article>
+
+        <!--création d'une collection des derniers articles à la une. -->
+        <article>
+            <!--création de la section.-->
+            <section class="latest-articles" aria-labelledby="latest-articles-title">
+                <!--création du lien "voir tous les articles".-->
+                <div>
+                    <a href="Actus.html" class="btn1">Voir tous les articles</a>
                 </div>
 
+                <!--création du titre de la section, du conteneur générale de bloc et du conteneur seulement des 4 articles-->
+                <div class="container">
+                    <h2 id="latest-articles-title">Nos derniers articles</h2>
+                    <div class="articles-grid">
+
+                        <!--création de l'encadré du premier article-->
+                        <article class="article-card">
+                            <!--Le lien-->
+                            <a href="/Actus/article-Quels_scénarios_pour_la_fin_dannée.html" class="article-card__link">
+                                <!--L'image-->
+                                <img src="images/article-Quels_scénarios_pour_la_fin_dannée.jpg" alt="Description de l'image" loading="lazy" width="400" height="250">
+                                <!--Le text descriptif-->
+                                <div class="article-card__body">
+                                    <span class="article-card__category">Plannification et analyse financière</span>
+                                    <h3 class="article-card__title">Quels scénarios pour la fin de l'année ?</h3>
+                                    <p class="article-card__excerpt">Court extrait de deux lignes maximum pour donner envie de lire la suite.</p>
+                                    <time datetime="2026-10-01">1 octobre 2026</time>
+                                </div>
+                            </a>
+                        </article>
+
+                        <!--création de l'encadré du second article-->
+                        <article class="article-card">
+                            <!--Le lien-->
+                            <a href="/Actus/article-Dirigeons_nous_vers_un_krach_boursier.html" class="article-card__link">
+                                <!--L'image-->
+                                <img src="images/article-Dirigeons_nous_vers_un_krach_boursier.jpg" alt="Description de l'image" loading="lazy" width="400" height="250">
+                                <!--Le text descriptif-->
+                                <div class="article-card__body">
+                                    <span class="article-card__category">Analyse macro</span>
+                                    <h3 class="article-card__title">Dirigeons-nous vers un krach boursier ?</h3>
+                                    <p class="article-card__excerpt">Court extrait de deux lignes maximum pour donner envie de lire la suite.</p>
+                                    <time datetime="2026-10-01">1 octobre 2026</time>
+                                </div>
+                            </a>
+                        </article>
+
+                        <!--création de l'encadré du troisième article-->
+                        <article class="article-card">
+                            <!--Le lien-->
+                            <a href="/Actus/article-Vers_quels_nouveaux_sommets_pour_le_Bitcoin.html" class="article-card__link">
+                                <!--L'image-->
+                                <img src="images/article-Vers_quels_nouveaux_sommets_pour_le_Bitcoin.jpg" alt="Description de l'image" loading="lazy" width="400" height="250">
+                                <!--Le text descriptif-->
+                                <div class="article-card__body">
+                                    <span class="article-card__category">Analyse technique et fondamentale</span>
+                                    <h3 class="article-card__title">Vers quels nouveaux sommets pour le Bitcoin</h3>
+                                    <p class="article-card__excerpt">Court extrait de deux lignes maximum pour donner envie de lire la suite.</p>
+                                    <time datetime="2026-10-01">1 octobre 2026</time>
+                                </div>
+                            </a>
+                        </article>
+
+                        <!--création de l'encadré du quatrième article-->
+                        <article class="article-card">
+                            <!--Le lien-->
+                            <a href="/Actus/article-Pertinent_dinvestir_dans_limmobilier_en_2026.html" class="article-card__link">
+                                <!--L'image-->
+                                <img src="images/article-Pertinent_dinvestir_ dans_limmobilier_en_2026.jpg" alt="Description de l'image" loading="lazy" width="400" height="250">
+                                <!--Le text descriptif-->
+                                <div class="article-card__body">
+                                    <span class="article-card__category">Analyse fondamentale</span>
+                                    <h3 class="article-card__title">Pertinent d'investir dans l'immobilier en 2026 ?</h3>
+                                    <p class="article-card__excerpt">Court extrait de deux lignes maximum pour donner envie de lire la suite.</p>
+                                    <time datetime="2026-10-01">1 octobre 2026</time>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+                </div>
             </section>
         </article>
+          
+        <!--Création d'un bandeau qui ammène à nous découvrire avec un CTL-->
         <article>
-            <h1 class="titre2">Nos derniers articles</h1>
-            <section class="article1">
-                
-            </section>
-            <section class="article2">
-
-            </section>
-            <section class="article3">
-
-            </section>
-            <section class="article4">
-
+            <section class="offre1">
+                <div class="miseenavant">
+                    <h1 class="ligne1">Un accompagnement sur mesure</h1>
+                    <h2 class="ligne2">Bilan Matri/Patrimonial, stratégie d'investissement, suivi personnalisé...</h2>
+                    <a href="Qui-sommes-nous.html">Découvrir notre gestion de patrimoine</a>
+                </div>
             </section>
         </article>
+        
+        
+            <!--création d'une collection de nos avantages-->
         <article>
-            <section class="article1">
+            <!--création de la section.-->
+            <section class="avantages" aria-labelledby="avantages-title">
+                <!--Création du conteneur des 3 avantages-->
+                    <div class="avantages-grid">
+                        <!--création de l'encadré du premier article-->
+                        <article class="avantage-card">
+                                <!--Le dessin-->
+                            <img src="images/avantages_sécurisez_votre_avenir.jpg" alt="Dessin d'un bouclier avec une validation en son centre">
+                                <!--Le text descriptif-->
+                            <div class="avantage__body">
+                                <h2 class="avantage__title">Sécurisez votre avenir</h2>
+                                <p class="avantage__excerpt">Des solutions adaptées<br>à votre profil.</p>
+                            </div>
+                        </article>
 
+                        <!--création de l'encadré du second article-->
+                        <article class="avantage-card">
+                                <!--Le dessin-->
+                            <img src="images/avantages_optimiser_votre_avenir.jpg" alt="Dessin d'un graphique avec une courbe qui augmente">
+                                <!--Le text descriptif-->
+                            <div class="avantage__body">
+                                <h2 class="avantage__title">Optimisez votre patrimoine</h2>
+                                <p class="avantage__excerpt">Une stratégie sur le long terme.</p>
+                            </div>
+                        </article>
+
+                        <!--création de l'encadré du torisième article-->
+                        <article class="avantage-card">
+                                <!--Le dessin-->
+                            <img src="images/avantages_un_accompagnement_humain.jpg" alt="Dessin de la silhouette d'une personne">
+                                <!--Le text descriptif-->
+                            <div class="avantage__body">
+                                <h2 class="avantage__title">Un accompagnement humain</h2>
+                                <p class="avantage__excerpt">A chaque étape de votre vie.</p>
+                            </div>
+                        </article>
+                    </div>
             </section>
         </article>
-        <article>
-            <section class="avantage1">
-
-            </section>
-            <section class="avantage2">
-
-            </section>
-            <section class="article3">
-
-            </section>
-        </article>
+        
 
         <footer>
             <p>Copyright 2026 Dimitri Jouet - Tous droits réservés</p>
