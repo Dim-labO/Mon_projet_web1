@@ -6,32 +6,140 @@
         <title>Qui-sommes-nous ?</title>
             <link rel="stylesheet" href="style.css">
     </head>
+    
+     <!--Ensuite on va venir construire le header avec le titre et une liste qui permettra de créer le menu vers les différentes pages principales du sites
+        On oubliera pas l'appel à l'action à la fin. Pour chaque partie on créé des balises pour faciliter le travail en CSS-->
     <body>
-        <header>
-            <h1>Invest&You</h1>
-        </header>
-        <nav>
-            <div class="table">
-                <ul>
-                    <li class="menu-acc">
-                        <a href="Accueil.html">Accueil</a>
-                    </li>
-                    <li class="menu-qui">
-                        <a href="Qui-sommes-nous.html">Qui sommes nous ?</a>
-                    </li class="menu-ress">
-                    <li>
-                        <a href="Ressources.html">Ressources</a>
-                    </li>
-                    <li class="menu-cont">
-                        <a href="Contact.html">Contact</a>
-                    </li>
-                    <li class="menu-pre">
-                        <a href="Contact.html">Prendre RDV</a> <!--Voir vidéo 10'30-->
-                    </li>
-                </ul>
+        <header class="header">
+            <div class="conteneur header__contenu">    
+                <a href="accueil.html" class="header__logo">
+                    <img src="../images/dessin_logo.png" alt="" class="header__logo-img">
+                    <span class="header__logo-texte">Invest&amp;Vous</span>
+                </a>
+                <nav class="nav" aria-label="Navigation principale">
+                    <a href="accueil.html" class="nav__lien">Accueil</a>
+                    <a href="qui-sommes-nous.html" class="nav__lien nav__lien--actif">Qui sommes nous ?</a>
+                    <a href="nos-offres.html" class="nav__lien">Nos offres</a>
+                    <a href="actus.html" class="nav__lien">Actus</a>
+                    <a href="ressources.html" class="nav__lien">Ressources</a>
+                    <a href="contact.html" class="nav__lien">Contact</a>
+                    <a href="contact.html" class="bouton">Prendre RDV</a> 
+                </nav>
             </div>
-        </nav>
-        <footer>
+        </header>
+        
+        <main>
+            <!--Création d'une section pour la première partie de la page : image de fond, texte marketing et un CTA-->
+            <article>
+                <section class="hero hero--qui-sommes-nous">
+                    <div class="conteneur">
+                        <h2 class="hero__titre">Qui sommes-nous ?</h2>
+                        <h3 class="hero__texte">Notre expérience, nos valeurs et notre vision de l'investissement.</h3>
+                    </div>
+                </section>
+            </article>
+
+            <!--création d'une collection pour présenter notre parcours -->
+            <section class="section conteneur" aria-labelledby="parcours-titre">
+                <h2 id="parcours-titre" class="section__titre">Notre parcours</h2>
+
+                <div class="parcours">
+                    <!-- Colonne image -->
+                    <div class="parcours__visuel">
+                    <img src="../images/image_notre_parcours.jpeg"
+                     alt="Dessin d'une personne qui vient de recevoir son diplôme"
+                     loading="lazy">
+                    </div>
+
+                    <!-- Colonne texte -->
+                    <div class="carte">
+                        <div class="carte__corps">
+
+                            <div class="parcours__point">
+                                <img src="../images/parcours_conseillers_diplomes.jpg" alt="" class="parcours__icone" loading="lazy">
+                                <div>
+                                    <h3 class="carte__titre">Chacun de nos 10 conseillers est diplômé d'État, avec des certifications de spécialisation</h3>
+                                    <p class="carte__texte">Ingénierie patrimoniale et juridique, optimisation fiscale, placements financiers, immobilier, chef d'entreprise, gestion privée.</p>
+                                </div>
+                            </div>
+
+                            <div class="parcours__point">
+                                <img src="../images/parcours_experience.jpg" alt="" class="parcours__icone" loading="lazy">
+                                <div>
+                                    <h3 class="carte__titre">Plus de 10 ans d'expérience dans la gestion de patrimoine</h3>
+                                    <p class="carte__texte">Plus de 200 clients et 50 millions d'actifs sous gestion.</p>
+                                </div>
+                            </div>
+
+                            <div class="parcours__point">
+                                <img src="../images/parcours_notre_reussite.jpg" alt="" class="parcours__icone" loading="lazy">
+                                <div>
+                                    <h3 class="carte__titre">Notre critère de réussite : combien fait-on gagner à nos clients ?</h3>
+                                    <p class="carte__texte">80 % de nos clients gagnent entre 8 et 12 % d'intérêts par an.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!--création d'une collection de nos avantages-->
+            <article>
+                <!--création de la section.-->
+                <section class="section conteneur" aria-labelledby="avantages-title">
+                        <!--Création du conteneur des 3 avantages-->
+                        <div class="arguments">
+                            <!--création de l'encadré du premier article-->
+                            <article class="avantage-card-qui">
+                                <!--Le dessin-->
+                                <img src="../images/parcours_motivation.jpg" alt="Dessin de la silouhette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
+                                <!--Le text descriptif-->
+                                <div class="avantage__body">
+                                    <h2 class="argument__titre">Nos motivations</h2>
+                                    <p class="argument__texte">Parce que chaque patrimoine raconte une histoire unique, nous plaçons vos ambitions au cœur de notre démarche pour construire, protéger et valoriser votre avenir financier.</p>
+                                </div>
+                            </article>
+
+                            <!--création de l'encadré du second article-->
+                            <article class="avantage-card-qui">
+                                <!--Le dessin-->
+                                <img src="../images/parcours_vision.jpg" alt="Dessin d'un graphique avec une courbe qui augmente" class="argument__image" loading="lazy">
+                                <!--Le text descriptif-->
+                                <div class="avantage__body">
+                                    <h2 class="argument__titre">Notre vision</h2>
+                                    <p class="argument__texte">Nous croyons en une gestion de patrimoine humaine, transparente et durable, où chaque décision financière devient une opportunité de concrétiser vos projets de vie.</p>
+                                </div>
+                            </article>
+
+                            <!--création de l'encadré du torisième article-->
+                            <article class="avantage-card">
+                                <!--Le dessin-->
+                                <img src="../images/parcours_services.jpg" alt="Dessin de la silhouette d'une personne" class="argument__image" loading="lazy">
+                                <!--Le text descriptif-->
+                                <div class="avantage__body">
+                                   <h2 class="argument__titre">Notre service</h2>
+                                    <p class="argument__texte">De l’investissement sur mesure à la stratégie patrimoniale globale, nous vous accompagnons à chaque étape pour optimiser vos ressources et bâtir sereinement votre avenir.</p>
+                                </div>
+                            </article>
+                        </div>
+                </section>
+            </article>
+
+            <!--Création d'un bandeau qui ammène à nous découvrire avec un CTL-->
+            <article>
+                <section class="conteneur">
+                    <div class="bandeau__qui_sommes_nous">
+                            <p class="bandeau__guillemet">"</p>
+                            <p class="bandeau__qui__citation">"Je crois en une finance utile, qui soutient vos projets de vie </br> et contribue à un avenir plus serein"</p>
+                            <p class="bandeau__qui__auteur">Quentin Le Loup, PDG de Invest&Vous</p>   
+                    </div>
+                </section>
+            </article>
+        </main>
+
+        <footer class="conteneur section footer">
             <p>Copyright 2026 Dimitri Jouet - Tous droits réservés</p>
 
         </footer>

@@ -112,12 +112,18 @@ h1, h2, h3 { margin: 0; }
 /*Hero (image de fond juste en-dessous du header*/
 .hero {
   color: var(--blanc);
-  /* Dégradé temporaire : remplace-le par ton image :
-     background: linear-gradient(...), url("images/hero.jpg") center / cover; */
   background: 
     linear-gradient(90deg, rgba(15, 61, 51, 0.9) 30%, rgba(15, 61, 51, 0.3)),
-    url("../images/image_banniere_accueil.JPEG") center / cover no-repeat;
+    var(--hero-image) center / cover no-repeat;
   padding-block: 5rem;
+}
+
+.hero--accueil {
+  --hero-image: url("../images/image_banniere_accueil.JPEG")
+}
+
+.hero--qui-sommes-nous {
+  --hero-image: url("../images/image_banniere_qui_sommes_nous.JPEG")
 }
  
 .hero__majuscule {
@@ -174,7 +180,44 @@ h1, h2, h3 { margin: 0; }
   padding: var(--espace-lg);
   border-radius: var(--rayon);
 }
+
 .bandeau__titre { font-family: var(--font-titre); font-size: 1.25rem; }
+
+.bandeau__qui_sommes_nous{
+  display: flex;
+  flex-direction: column;
+  gap: var(--espace-md);
+  align-items: center;
+  background: var(--vert-principal);
+  color: var(--blanc);
+  border-radius: var(--rayon);
+}
+
+.bandeau__guillemet { 
+  font-family: var(--font-titre); 
+  font-size: 6rem; 
+  color: var(--or);
+  text-align: center;
+  margin-bottom: 0;
+  margin-top: 3%; 
+  line-height: 1; 
+}
+
+.bandeau__qui__citation { 
+  font-family: var(--font-titre); 
+  font-size: 1.7rem; 
+  text-align: center;
+  margin-bottom: 1%;
+  margin-top: 0%;
+}
+
+.bandeau__qui__auteur {
+  font-family: var(--font-titre);
+  font-size: 1rem;
+  font-style: italic;
+  text-align: center;
+  margin-top: 0%;
+}
 
 /*Arguments*/
 .arguments {
@@ -186,21 +229,66 @@ h1, h2, h3 { margin: 0; }
   height: 70px;
   width: auto;
   display: inline-block;
+  border-radius: 50%;
 }
 
 .argument__titre { font-family: var(--font-sous-titre); font-size: 1rem; }
 .argument__texte { font-size: 0.9rem; opacity: 0.75; margin: 0; }
+
+.avantage-card-qui {
+  border-right: 1px solid gray;
+}
 
 /*Footer*/
 .footer {
   text-align: center;
 }
 
+/*Page Qui sommes nous ? Notre parcours*/
+.parcours {
+  display: grid;
+  gap: var(--espace-md);
+  grid-template-columns: 1fr;     
+}
+
+.parcours__visuel {
+  position: relative;
+  height: 250px;                   
+  border-radius: var(--rayon);
+  overflow: hidden;
+}
+
+.parcours__visuel img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.parcours__point {
+  display: flex;
+  gap: var(--espace-md);
+  align-items: flex-start;
+}
+.parcours__point + .parcours__point { margin-top: var(--espace-lg); }
+
+.parcours__icone {
+  flex-shrink: 0;                 
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.carte__texte { font-size: 0.9rem; margin: 0; }
+
 /*Media Queries*/
 @media (min-width: 768px) {
   .grille-articles { grid-template-columns: repeat(2, 1fr); }
   .bandeau { flex-direction: row; align-items: center; justify-content: space-between; }
   .arguments { grid-template-columns: repeat(3, 1fr); }
+  .parcours { grid-template-columns: 1fr 1fr; }
+  .parcours__visuel { height: auto; }
 }
  
 @media (min-width: 1024px) {
