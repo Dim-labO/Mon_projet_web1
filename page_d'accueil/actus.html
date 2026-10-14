@@ -6,32 +6,124 @@
         <title>Actus</title>
             <link rel="stylesheet" href="style.css">
     </head>
+    
+     <!--Ensuite on va venir construire le header avec le titre et une liste qui permettra de créer le menu vers les différentes pages principales du sites
+        On oubliera pas l'appel à l'action à la fin. Pour chaque partie on créé des balises pour faciliter le travail en CSS-->
     <body>
-        <header>
-            <h1>Invest&You</h1>
-        </header>
-        <nav>
-            <div class="table">
-                <ul>
-                    <li class="menu-acc">
-                        <a href="Accueil.html">Accueil</a>
-                    </li>
-                    <li class="menu-qui">
-                        <a href="Qui-sommes-nous.html">Qui sommes nous ?</a>
-                    </li class="menu-ress">
-                    <li>
-                        <a href="Ressources.html">Ressources</a>
-                    </li>
-                    <li class="menu-cont">
-                        <a href="Contact.html">Contact</a>
-                    </li>
-                    <li class="menu-pre">
-                        <a href="Contact.html">Prendre RDV</a> <!--Voir vidéo 10'30-->
-                    </li>
-                </ul>
+        <header class="header">
+            <div class="conteneur header__contenu">    
+                <a href="accueil.html" class="header__logo">
+                    <img src="../images/dessin_logo.png" alt="" class="header__logo-img">
+                    <span class="header__logo-texte">Invest&amp;Vous</span>
+                </a>
+                <nav class="nav" aria-label="Navigation principale">
+                    <a href="accueil.html" class="nav__lien">Accueil</a>
+                    <a href="qui-sommes-nous.html" class="nav__lien">Qui sommes nous ?</a>
+                    <a href="nos-offres.html" class="nav__lien">Nos offres</a>
+                    <a href="actus.html" class="nav__lien nav__lien--actif">Actus</a>
+                    <a href="ressources.html" class="nav__lien">Ressources</a>
+                    <a href="contact.html" class="nav__lien">Contact</a>
+                    <a href="contact.html" class="bouton">Prendre RDV</a> 
+                </nav>
             </div>
-        </nav>
-        <footer>
+        </header>
+        
+        <main>
+            <!--Création d'une section pour la première partie de la page : image de fond, texte marketing et un CTA-->
+            <article>
+                <section class="hero hero--actus">
+                    <div class="conteneur">
+                        <h2 class="hero__titre">Actualités</h2>
+                        <h3 class="hero__texte">Les dernières nouvelles pour investir en tout connaissance de cause.</h3>
+                    </div>
+                </section>
+            </article>
+
+            <section class="actus">
+                <div class="conteneur">
+
+                    <!-- Barre de filtres -->
+                    <nav class="filtres" aria-label="Filtrer les articles">
+                        <button class="filtre filtre--actif" type="button">Tous</button>
+                        <button class="filtre" type="button">Économie</button>
+                        <button class="filtre" type="button">Marchés</button>
+                        <button class="filtre" type="button">Matières premières</button>
+                        <button class="filtre" type="button">Crypto</button>
+                        <button class="filtre" type="button">Immobilier</button>
+                    </nav>
+                    <!-- Liste d'articles -->
+                    <ul class="liste-articles">
+
+                        <li class="article-ligne">
+                            <img src="../images/actus_inflation.jpg" alt="Un couple dans un supermarché, qui se pose la question s'ils doivent acheter un produit">
+                            <div class="article-contenu">
+                                <div class="article-meta">
+                                    <span class="tag tag--economie">Économie</span>
+                                    <time datetime="2025-04-12">12 avril 2025</time>
+                                </div>
+                                <h3>Inflation : vers une stabilisation en 2026 ?</h3>
+                                <p>Après deux années de forte hausse, les prévisions laissent entrevoir un ralentissement de l'inflation, ce qui pourrait soutenir les marchés…</p>
+                                <a class="lien-article" href="#">Lire l'article <span aria-hidden="true">→</span></a>
+                            </div>
+                        </li>
+
+                        <li class="article-ligne">
+                            <img src="../images/actus_etf.jpg" alt="Photo du bâtiment du New York stock exchange">
+                            <div class="article-contenu">
+                                <div class="article-meta">
+                                    <span class="tag tag--marches">Marchés</span>
+                                    <time datetime="2025-04-08">8 avril 2025</time>
+                                </div>
+                                <h3>Les ETF toujours dans le top en 2026</h3>
+                                <p>Les ETF continuent de séduire les investisseurs grâce à leur simplicité et leur diversification. Quels sont les plus performants cette année ?</p>
+                                <a class="lien-article" href="#">Lire l'article <span aria-hidden="true">→</span></a>
+                            </div>
+                        </li>  
+                    
+                        <li class="article-ligne">
+                            <img src="../images/actus_immobilier.jpg" alt="Immeubles neufs">
+                            <div class="article-contenu">
+                            <div class="article-meta">
+                                <span class="tag tag--immobilier">Immobilier</span>
+                                <time datetime="2025-04-12">12 avril 2025</time>
+                            </div>
+                            <h3>Immobilier : Quelles opportunités en 2026 ?</h3>
+                            <p>Taux, zones, dispositifs... Le point sur les meilleures opportunités pour investir dans l'immobilier cette année</p>
+                            <a class="lien-article" href="#">Lire l'article <span aria-hidden="true">→</span></a>
+                            </div>
+                        </li>
+
+                        <li class="article-ligne">
+                            <img src="../images/actus_bitcoin.jpg" alt="Pièces dorées frappées du sigle de Bitcoin">
+                            <div class="article-contenu">
+                            <div class="article-meta">
+                                <span class="tag tag--crypto">Crypro</span>
+                                <time datetime="2025-04-08">8 avril 2025</time>
+                            </div>
+                            <h3>Bitcoin un nouvel élan en 2026</h3>
+                            <p>Entre adoption institutionnelle et régulation, la reine des cryptos pourrait bien profiter d'un nouveau cycle haussier</p>
+                            <a class="lien-article" href="#">Lire l'article <span aria-hidden="true">→</span></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!--Création d'un bandeau qui ammène à nous découvrire avec un CTL-->
+            <article>
+                <section class="conteneur">
+                    <div class="bandeau">
+                        <div>
+                            <h2 class="bandeau__titre">Vous souhaitez aller plus loin ?</h2>
+                            <p>Consultez nos références médiatiques et sites spécialisés, qui vous éclairons dans vos décisions</p>
+                        </div>    
+                        <a href="references_mediatique_et_sites_specialises.html" class="bouton">Voir notre sélection <span aria-hidden="true"> →</span></a>
+                    </div>
+                </section>
+            </article>
+
+
+        <footer class="conteneur section footer">
             <p>Copyright 2026 Dimitri Jouet - Tous droits réservés</p>
 
         </footer>

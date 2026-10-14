@@ -6,34 +6,157 @@
         <title>Contact</title>
             <link rel="stylesheet" href="style.css">
     </head>
+    
+     <!--Ensuite on va venir construire le header avec le titre et une liste qui permettra de créer le menu vers les différentes pages principales du sites
+        On oubliera pas l'appel à l'action à la fin. Pour chaque partie on créé des balises pour faciliter le travail en CSS-->
     <body>
-        <header>
-            <h1>Invest&You</h1>
-        </header>
-        <nav>
-            <div class="table">
-                <ul>
-                    <li class="menu-acc">
-                        <a href="Accueil.html">Accueil</a>
-                    </li>
-                    <li class="menu-qui">
-                        <a href="Qui-sommes-nous.html">Qui sommes nous ?</a>
-                    </li class="menu-ress">
-                    <li>
-                        <a href="Ressources.html">Ressources</a>
-                    </li>
-                    <li class="menu-cont">
-                        <a href="Contact.html">Contact</a>
-                    </li>
-                    <li class="menu-pre">
-                        <a href="Contact.html">Prendre RDV</a> <!--Voir vidéo 10'30-->
-                    </li>
-                </ul>
+        <header class="header">
+            <div class="conteneur header__contenu">    
+                <a href="accueil.html" class="header__logo">
+                    <img src="../images/dessin_logo.png" alt="" class="header__logo-img">
+                    <span class="header__logo-texte">Invest&amp;Vous</span>
+                </a>
+                <nav class="nav" aria-label="Navigation principale">
+                    <a href="accueil.html" class="nav__lien">Accueil</a>
+                    <a href="qui-sommes-nous.html" class="nav__lien">Qui sommes nous ?</a>
+                    <a href="nos-offres.html" class="nav__lien">Nos offres</a>
+                    <a href="actus.html" class="nav__lien">Actus</a>
+                    <a href="ressources.html" class="nav__lien">Ressources</a>
+                    <a href="contact.html" class="nav__lien nav__lien--actif">Contact</a>
+                    <a href="contact.html" class="bouton">Prendre RDV</a> 
+                </nav>
             </div>
-        </nav>
-        <footer>
-            <p>Copyright 2026 Dimitri Jouet - Tous droits réservés</p>
+        </header>
 
+        <main>
+            <!--Création d'une section pour la première partie de la page : image de fond, texte marketing et un CTA-->
+                <section class="hero hero--contact">
+                    <div class="conteneur">
+                        <h2 class="hero__titre">Contactez-nous</h2>
+                        <h3 class="hero__texte">Prenons rendez-vous pour faire le point sur votre situation et définir ensemble votre stratégie</h3>
+                    </div>
+                </section>
+
+
+                <section class="section conteneur">
+                    <div class="contact__grille">
+
+                        <!-- colonne gauche : formulaire -->
+                        <div class="carte_contact">
+                            <div class="rdv__titre">
+                                <span class="#">📅</span>
+                                <h2>Prendre un rendez-vous</h2>
+                            </div>
+                            <p class="rdv__intro">Choisissez un créneau qui vous convient, nous vous recontacterons rapidement.</p>
+
+                            <form class="formulaire" action="#" method="post">
+
+                                <div class="formulaire__ligne">
+                                    <div class="champ">
+                                        <label for="nom">Nom *</label>
+                                        <input type="text" id="nom" name="nom" placeholder="Dupont" required>
+                                    </div>
+                                    <div class="champ">
+                                        <label for="prenom">Prénom *</label>
+                                        <input type="text" id="prenom" name="prenom" placeholder="Jean" required>
+                                    </div>
+                                </div>
+
+                                <div class="formulaire__ligne">
+                                    <div class="champ">
+                                        <label for="email">Email *</label>
+                                        <input type="email" id="email" name="email" placeholder="jean.dupont@gmail.com" required>
+                                    </div>
+                                    <div class="champ">
+                                        <label for="tel">Téléphone *</label>
+                                        <input type="tel" id="tel" name="tel" placeholder="0738927510" required>
+                                    </div>
+                                </div>
+
+                                <div class="champ">
+                                    <label for="objet">Objet du rendez-vous</label>
+                                    <select id="objet" name="objet">
+                                        <option>Bilan patrimonial</option>
+                                        <option>Intégrer le fond d'investissement</option>
+                                        <option>Placements financiers</option>
+                                        <option>Autre</option>
+                                    </select>
+                                </div>
+
+                                <div class="champ">
+                                    <label for="date">Date souhaitée</label>
+                                    <input type="date" id="date" name="date">
+                                </div>
+
+                                <div class="champ">
+                                    <label for="message">Message (optionnel)</label>
+                                    <textarea id="message" name="message" rows="4"
+                                        placeholder="Dites-nous en quelques mots votre projet..."></textarea>
+                                </div>
+
+                                <button type="submit" class="bouton_contact">Envoyer ma demande →</button>
+                            </form>
+                        </div>
+                        
+                        <!-- colonne droite : coordonnées + arguments -->
+                        <div class="colonne-droite">
+
+                            <div class="carte_contact">
+                                <h3>Nos coordonnées</h3>
+                                <ul class="coordonnees">
+                                    <li><span class="icone">📞</span> 02 28 34 56 78</li>
+                                    <li><span class="icone">✉️</span> contact@investetvous.fr</li>
+                                    <li><span class="icone">📍</span> Nantes, France</li>
+                                    <li><span class="icone">🕘</span> Du lundi au vendredi<br>9h - 18h</li>
+                                </ul>
+
+                                <div class="carte-map">
+                                    <img src="../images/carte_contact.png" alt="Carte de l'île de Nantes avec une localisation 1 rue de la Savonnerie">
+                                </div>
+                            </div>
+
+                            <div class="carte_contact">
+                                <h3>Pourquoi nous contacter ?</h3>
+                                <ul class="arguments__contact">
+                                    <li>Faire un bilan de ce que vous souhaitez et de ce que l'on peut vous proposer</li>
+                                    <li>Définir une stratégie adaptée à vos objectifs</li>
+                                    <li>Bénéficier d'un accompagnement personnalisé</li>
+                                    <li>Accéder à des conseils et des outils exclusifs</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                
+                
+                </section>
+
+        </main>
+
+        <footer class="footer__contact">
+            <div class="conteneur footer__contact__contenu">    
+                <a href="accueil.html" class="footer__contact__logo">
+                    <img src="../images/dessin_logo.png" alt="" class="footer__contact__logo-img">
+                    <span class="footer__contact__logo-texte">Invest&amp;Vous</span>
+                </a>
+                <nav class="nav" aria-label="Navigation principale">
+                    <a href="accueil.html" class="nav__lien">Accueil</a>
+                    <a href="qui-sommes-nous.html" class="nav__lien">Qui sommes nous ?</a>
+                    <a href="nos-offres.html" class="nav__lien">Nos offres</a>
+                    <a href="actus.html" class="nav__lien">Actus</a>
+                    <a href="ressources.html" class="nav__lien">Ressources</a>
+                    <a href="contact.html" class="nav__lien">Contact</a>
+                    <a href="https://www.linkedin.com" class="nav__lien" target="_blank" rel="noopener noreferrer">
+                        <img src="../images/linkedin_logo.png" alt="Logo de Linkedin" class="footer__contact__logo-img">
+                    </a>
+                    <a href="https://www.x.com" class="nav__lien" target="_blank" rel="noopener noreferrer">
+                        <img src="../images/x_logo.png" alt="Logo de X" class="footer__contact__logo-img">
+                    </a>
+                    <a href="https://www.youtube.com" class="nav__lien" target="_blank" rel="noopener noreferrer">
+                        <img src="../images/youtube_logo.png" alt="Logo de Youtube" class="footer__contact__logo-img">
+                    </a>
+                </nav>
+            </div>
+            <p class="footer">Copyright 2026 Dimitri Jouet - Tous droits réservés</p>
         </footer>
     </body>
 </html>

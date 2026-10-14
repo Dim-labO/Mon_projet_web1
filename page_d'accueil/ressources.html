@@ -6,92 +6,209 @@
         <title>Ressources</title>
             <link rel="stylesheet" href="style.css">
     </head>
-    <header>
-            <h1>Invest&You</h1>
-        </header>
-        <nav>
-            <div class="table">
-                <ul>
-                    <li class="menu-acc">
-                        <a href="Accueil.html">Accueil</a>
-                    </li>
-                    <li class="menu-qui">
-                        <a href="Qui-sommes-nous.html">Qui sommes nous ?</a>
-                    </li class="menu-ress">
-                    <li>
-                        <a href="Ressources.html">Ressources</a>
-                    </li>
-                    <li class="menu-cont">
-                        <a href="Contact.html">Contact</a>
-                    </li>
-                    <li class="menu-pre">
-                        <a href="Contact.html">Prendre RDV</a> <!--Voir vidéo 10'30-->
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    <body>
-        <h1>Toutes les formations utiles pour bien investir</h1>
-        <p>Vous pouvez télécharger <a href="Java-script.odt">ici</a> le super travail d'un de mes partenaire sur l'apprentissage du code et plus précisément de Java-script</p>
     
-        <h1>Comment bien investir en 2026 ?</h1>
-        <h2>Sommaire</h2>
-        <ol type="I">
-            <li>Introduction</li>
-            <li><a href="#ancre1">Qu'est-ce qu'un portefeuille bien organisé ?</a> 
-                <ul>
-                    <li>Avoir un plan...&nbsp;et le suivre !</li>
-                    <li>Le portefeuille passif et actif</li>
-                    <li>Être diversifié mais pas trop</li>
-                </ul>
-            </li>
-            <li>Le portefeuille passif &amp; actif</li>
-            <li>Les ETF, oui, mais le(s)quel(s)</li>
-            <li>Les actions à fort potentiel</li>
-            <li>Les matière premières</li>
-            <li>Les cryptomonnaies</li>
-            <li>Les autres investissements</li>
-            <li>L'intérêt des obligations</li>
-            <li>L'importance d'un portefeuille actif</li>
-            <li>Choisir les bonnes plateformes</li>
-            <li>Comment bien acheter et bien vendre ?</li>
-        </ol>
-        <h2>Introduction</h2>
-        <!--Revoir l'organisation du blog-->
-        <p>Si vous voulez <strong>surperformer les marchés</strong>, il s'impose de comprendre notre monde actuel et comme il évolue.<br/> Cela implique de bien comprendre le <em>fonctionnement économique et financier</em> du monde mais aussi les <em>enjeux qui se profilent</em>.<br/> Avant d'aller plus loin je souhaite vous partager un outil important pour étudier les graphique de l'évolution des différents types d'actifs. <br/>Si vous souhaitez analyser les marchés, le meilleur outil est selon moi <a href="https://fr.tradingview.com/" target="_blank">TradingView</a></p> 
-        <p> Sur le long terme les grands indices boursiers sont en augmentation. <br/> Ce graphique représentant l'évolution d'un des plus gros indice américain en est la preuve vivante</p>
-        <img src="Le S&P500 en 100ans.png" alt="Image représentant l'évolution exponentielle de l'indice S&P500, passant de quelques centaines de dollars à plus de 7000 aujourd'hui">
-        <hr>
-        <h2 id="ancre1">Qu'est-ce qu'un portefeuille bien organisé ?</h2>
-        <h3>Avoir un plan... et le suivre !</h3>
-        <h3>Le portefeuille passif et actif</h3>
-        <h3>Être diversifié mais pas trop</h3>
-        <h2>Les ETF oui, mais le(s)quel(s) ?</h2>
-        <dl>
-            <dt>ETF</dt>
-            <dd>Un ETF signifie Exchange Traded Fund, ou fond négocié en bourse en français. Plus clairement c'est un ensemble d'actions qui sont réunis au sein d'une même grande action.</dd>
-        </dl>
-        <h2>Les actions à fort potentiel</h2>
-        <h2>Les matières premières</h2>
-        <h2>Les cryptomonnaies</h2>
-        <h2>Les autres investissements</h2>
-        <h2>Et l'immobilier dans tout ça</h2>
-        <h2>L'intérêt des obligations ?</h2>
-        <h2>L'importance d'un portefeuille actif</h2>
-        <p>Le fait d'avoir un portefeuille actif a plusieurs intérêts :</p>
-        <ul>
-            <li>Profiter des baisses sans avoir à vendre</li>
-            <li>Trader des actifs dans lesquels on ne veut pas investir mais pour profiter d'une opportunité court terme</li>
-            <li>Augmenter mon pourcentage de bénéfices</li>
-            <li>Enrichir la trésorerie pour le portefeuille passif</li>
-            <li>Utiliser les effets de leviers</li>
-        </ul>
-        <h2>Choisir les bonnes plateformes</h2>
-        <h2>Comment bien acheter et bien vendre ?</h2>
+     <!--Ensuite on va venir construire le header avec le titre et une liste qui permettra de créer le menu vers les différentes pages principales du sites
+        On oubliera pas l'appel à l'action à la fin. Pour chaque partie on créé des balises pour faciliter le travail en CSS-->
+    <body>
+        <header class="header">
+            <div class="conteneur header__contenu">    
+                <a href="accueil.html" class="header__logo">
+                    <img src="../images/dessin_logo.png" alt="" class="header__logo-img">
+                    <span class="header__logo-texte">Invest&amp;Vous</span>
+                </a>
+                <nav class="nav" aria-label="Navigation principale">
+                    <a href="accueil.html" class="nav__lien">Accueil</a>
+                    <a href="qui-sommes-nous.html" class="nav__lien">Qui sommes nous ?</a>
+                    <a href="nos-offres.html" class="nav__lien">Nos offres</a>
+                    <a href="actus.html" class="nav__lien">Actus</a>
+                    <a href="ressources.html" class="nav__lien nav__lien--actif">Ressources</a>
+                    <a href="contact.html" class="nav__lien">Contact</a>
+                    <a href="contact.html" class="bouton">Prendre RDV</a> 
+                </nav>
+            </div>
+        </header>
 
+        <main>
+            <!--Création d'une section pour la première partie de la page : image de fond, texte marketing et un CTA-->
+            <article>
+                <section class="hero hero--ressources">
+                    <div class="conteneur">
+                        <h2 class="hero__titre">Ressources</h2>
+                        <h3 class="hero__texte">Tout ce qu'il faut savoir pour mieux investir<br> et bien gérer son patrimoine.</h3>
+                    </div>
+                </section>
+            </article>
+
+
+            <!--Création de 3 collections ("Comprendre les bases", "Construire une portefeuille équilibré", "Aller plus loin")-->
+            <!--Création de la première collection-->
+            <section class="section conteneur" aria-labelledby="parcours-titre">
+                <h2 id="parcours-titre" class="section__titre">Comprendre les bases</h2>
+
+                <!--on rentre dans le le bloc inférieur avec l'ensemble des différentes ressources de la première collection-->
+                <div class="grille-articles">
+
+                    <!--carte qu'est ce que l'investissement-->
+                    <a href="/ressources/connaissances_linvestissement.html" class="carte carte_ressources">
+                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silouhette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
+                        <h3 class="ressources__titre">Qu'est-ce que l'investissement ?</h3>    
+                    </a>
+
+                    <!--carte qu'est ce que l'investissement-->
+                    <a href="/ressources/connaissances_linvestissement.html" class="carte carte_ressources">
+                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silouhette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
+                        <h3 class="ressources__titre">La Finance</h3>    
+                    </a>
+
+                    <!--carte qu'est ce que l'investissement-->
+                    <a href="/ressources/connaissances_linvestissement.html" class="carte carte_ressources">
+                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silouhette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
+                        <h3 class="ressources__titre">Poser des bases saines</h3>    
+                    </a>
+
+                    <!--carte qu'est ce que l'investissement-->
+                    <a href="/ressources/connaissances_linvestissement.html" class="carte carte_ressources">
+                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silouhette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
+                        <h3 class="ressources__titre">Définir une stratégie et un plan d'investissement</h3>    
+                    </a>
+
+                    <!--carte qu'est ce que l'investissement-->
+                    <a href="/ressources/connaissances_linvestissement.html" class="carte carte_ressources">
+                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silouhette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
+                        <h3 class="ressources__titre">Les règles d'or</h3>    
+                    </a>
+                  
+                    <!--carte qu'est ce que l'investissement-->
+                    <a href="/ressources/connaissances_linvestissement.html" class="carte carte_ressources">
+                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silouhette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
+                        <h3 class="ressources__titre">Portefeuille actif et passif</h3>    
+                    </a>
+                   
+                    <!--carte qu'est ce que l'investissement-->
+                    <a href="/ressources/connaissances_linvestissement.html" class="carte carte_ressources">
+                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silouhette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
+                        <h3 class="ressources__titre">Analyse fondamentale</h3>    
+                    </a>
+        
+                    <!--carte qu'est ce que l'investissement-->
+                    <a href="/ressources/connaissances_linvestissement.html" class="carte carte_ressources">
+                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silouhette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
+                        <h3 class="ressources__titre">Analyse technique</h3>    
+                    </a>
+                
+                    <!--carte qu'est ce que l'investissement-->
+                    <a href="/ressources/connaissances_linvestissement.html" class="carte carte_ressources">
+                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silouhette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
+                        <h3 class="ressources__titre">Comment choisir l'actif ?</h3>    
+                    </a>
+                   
+                    <!--carte qu'est ce que l'investissement-->
+                    <a href="/ressources/connaissances_linvestissement.html" class="carte carte_ressources">
+                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silouhette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
+                        <h3 class="ressources__titre">Comment et où investir ?</h3>    
+                    </a>
+                    
+                </div>
+                            
+            </section>
+
+            <!--Création de la première collection-->
+            <section class="conteneur" aria-labelledby="parcours-titre">
+                <h2 id="parcours-titre" class="section__titre">Construire un portefeuille équilibré</h2>
+
+                <!--on rentre dans le le bloc inférieur avec l'ensemble des différentes ressources de la première collection-->
+                <div class="grille-articles">
+
+                    <!--carte qu'est ce que l'investissement-->
+                    <a href="/ressources/connaissances_linvestissement.html" class="carte carte_ressources">
+                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silouhette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
+                        <h3 class="ressources__titre">Les ETF</h3>    
+                    </a>
+                    
+                    <!--carte qu'est ce que l'investissement-->
+                    <a href="/ressources/connaissances_linvestissement.html" class="carte carte_ressources">
+                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silouhette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
+                        <h3 class="ressources__titre">Les actions à fort potentiel</h3>    
+                    </a>
+                    
+                    <!--carte qu'est ce que l'investissement-->
+                    <a href="/ressources/connaissances_linvestissement.html" class="carte carte_ressources">
+                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silouhette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
+                        <h3 class="ressources__titre">Les matières premières</h3>    
+                    </a>
+                    
+                    <!--carte qu'est ce que l'investissement-->
+                    <a href="/ressources/connaissances_linvestissement.html" class="carte carte_ressources">
+                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silouhette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
+                        <h3 class="ressources__titre">Les cryptomonnaies</h3>    
+                    </a>
+                    
+                    <!--carte qu'est ce que l'investissement-->
+                    <a href="/ressources/connaissances_linvestissement.html" class="carte carte_ressources">
+                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silouhette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
+                        <h3 class="ressources__titre">Les autres investissements</h3>    
+                    </a>
+                    
+                    <!--carte qu'est ce que l'investissement-->
+                    <a href="/ressources/connaissances_linvestissement.html" class="carte carte_ressources">
+                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silouhette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
+                        <h3 class="ressources__titre">L'immobilier dans tout ça</h3>    
+                    </a>
+                   
+                </div>
+                            
+            </section>
+
+            <!--Création de la première collection-->
+            <section class="section conteneur" aria-labelledby="parcours-titre">
+                <h2 id="parcours-titre" class="section__titre">Aller plus loin</h2>
+
+                <!--on rentre dans le le bloc inférieur avec l'ensemble des différentes ressources de la première collection-->
+                <div class="grille-articles">
+
+                    <!--carte qu'est ce que l'investissement-->
+                    <a href="/ressources/connaissances_linvestissement.html" class="carte carte_ressources">
+                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silouhette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
+                        <h3 class="ressources__titre">L'intérêt des obligations</h3>    
+                    </a>
+         
+                    <!--carte qu'est ce que l'investissement-->
+                    <a href="/ressources/connaissances_linvestissement.html" class="carte carte_ressources">
+                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silouhette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
+                        <h3 class="ressources__titre">L'importance d'un portefeuille actif</h3>    
+                    </a>
+                    
+                    <!--carte qu'est ce que l'investissement-->
+                    <a href="/ressources/connaissances_linvestissement.html" class="carte carte_ressources">
+                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silouhette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
+                        <h3 class="ressources__titre">Choisir les bonnes plateformes d'investissement</h3>    
+                    </a>
+                    
+                    <!--carte qu'est ce que l'investissement-->
+                    <a href="/ressources/connaissances_linvestissement.html" class="carte carte_ressources">
+                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silouhette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
+                        <h3 class="ressources__titre">Comment bien acheter et bien vendre ?</h3>    
+                    </a>
+                    
+                </div>              
+            </section>
+
+            <!--Création d'un bandeau qui ammène à nous découvrire avec un CTL-->
+            <section class="conteneur">
+                <div class="bandeau">
+                    <div>
+                        <h2 class="bandeau__titre">Téléchargez notre guide gratuit</h2>
+                        <p>Les 10 clés pour bien investir en 2026</p>
+                    </div>  
+                    <!--pas encore fait-->  
+                    <a href="../page_d'accueil/les_10_cles_pour_bien_investir_en_2026.docx" class="bouton" download>Télécharger ⤓</a>
+                </div>
+            </section>
+
+
+    <footer class="conteneur section footer">
+            <p>Copyright 2026 Dimitri Jouet - Tous droits réservés</p>
+
+        </footer>
     </body>
-    <footer>
-        <p>Copyright 2026 Dimitri Jouet - Tous droits réservés</p>
-
-    </footer>
 </html>

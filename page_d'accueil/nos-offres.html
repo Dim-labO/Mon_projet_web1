@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nos offres</title>
+            <link rel="stylesheet" href="style.css">
+    </head>
+    
+     <!--Ensuite on va venir construire le header avec le titre et une liste qui permettra de créer le menu vers les différentes pages principales du sites
+        On oubliera pas l'appel à l'action à la fin. Pour chaque partie on créé des balises pour faciliter le travail en CSS-->
+    <body>
+        <header class="header">
+            <div class="conteneur header__contenu">    
+                <a href="accueil.html" class="header__logo">
+                    <img src="../images/dessin_logo.png" alt="" class="header__logo-img">
+                    <span class="header__logo-texte">Invest&amp;Vous</span>
+                </a>
+                <nav class="nav" aria-label="Navigation principale">
+                    <a href="accueil.html" class="nav__lien">Accueil</a>
+                    <a href="qui-sommes-nous.html" class="nav__lien">Qui sommes nous ?</a>
+                    <a href="nos-offres.html" class="nav__lien nav__lien--actif">Nos offres</a>
+                    <a href="actus.html" class="nav__lien">Actus</a>
+                    <a href="ressources.html" class="nav__lien">Ressources</a>
+                    <a href="contact.html" class="nav__lien">Contact</a>
+                    <a href="contact.html" class="bouton">Prendre RDV</a> 
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <!--Création d'une section pour la première partie de la page : image de fond, texte marketing et un CTA-->
+            <article>
+                <section class="hero hero--nos-offres">
+                    <div class="conteneur">
+                        <h2 class="hero__titre">Nos services</h2>
+                        <h3 class="hero__texte">Créés pour votre réussite financière</br>Développez passivement votre patrimoine </br> Profitez de votre liberté !</h3>
+                    </div>
+                </section>
+            </article>
+
+            <!--création d'une collection des derniers articles à la une. -->
+            <article>
+                <!--création de la section.-->
+                <section class="section conteneur" aria-labelledby="conteneur">
+                    <!--création du lien "voir tous les articles".-->
+                    <div>
+                        <a href="../page_d'accueil/contact.html" class="carte__lien">Nous contacter</a>
+                    </div>
+
+                    <!--création du titre de la section, du conteneur générale de bloc et du conteneur seulement des 4 articles-->
+                    <div>
+                        <h2 class="section__titre">4 offres en fonction de vos besoins</h2>
+                        <div class="grille-articles">
+
+                            <!--création de l'encadré du premier article-->
+                            <article class="carte">
+                                <!--Le lien-->
+                                <a href="/nos-offres/consulting.html">
+                                    <!--L'image-->
+                                    <img src="../images/image_consulting.jpg" alt="Description de l'image" class="carte__image" loading="lazy">
+                                    <!--Le text descriptif-->
+                                    <div class="carte__corps">
+                                        <h3 class="carte__titre">Consulting<br><br></h3>
+                                        <p>Vous avez besoin de conseils, d'une stratégie, d'une analyse...</p>
+                                    </div>
+                                </a>
+                            </article>
+
+                            <!--création de l'encadré du second article-->
+                            <article class="carte">
+                                <!--Le lien-->
+                                <a href="/nos-offres/bilan_patrimonial.html">
+                                <!--L'image-->
+                                <img src="../images/image_bilan_patrimonial.jpg" alt="Description de l'image" class="carte__image" loading="lazy">
+                                    <!--Le text descriptif-->
+                                    <div class="carte__corps">
+                                        <h3 class="carte__titre">Bilan patrimonial<br><br></h3>
+                                        <p>Vous voulez organiser, planifier et construire un patrimoine en fonction votre profil d'investisseur.</p>
+                                    </div>
+                                </a>
+                            </article>
+
+                            <!--création de l'encadré du troisième article-->
+                            <article class="carte">
+                                <!--Le lien-->
+                                <a href="/nos-offres/integrer_le_fond_dinvestissement.html">
+                                    <!--L'image-->
+                                    <img src="../images/image_integrer_le_fond_dinvestissement.jpg" alt="Description de l'image" class="carte__image" loading="lazy">
+                                    <!--Le text descriptif-->
+                                    <div class="carte__corps">
+                                        <h3 class="carte__titre">Intégrer notre fond d'investissement</h3>
+                                        <p>Vous voulez investir une partie de votre patrimoine dans un fond à 12%/ an d'intérêts en moyenne.</p>
+                                    </div>
+                                </a>
+                            </article>
+
+                            <!--création de l'encadré du quatrième article-->
+                            <article class="carte">
+                                <!--Le lien-->
+                                <a href="/nos-offres/gestion_patrimonial_individuelle.html">
+                                    <!--L'image-->
+                                    <img src="../images/image_gestion_patrimonial_individuelle.jpg" alt="Description de l'image" class="carte__image" loading="lazy">
+                                    <!--Le text descriptif-->
+                                    <div class="carte__corps">
+                                        <h3 class="carte__titre">Gestion patrimonial individuelle</h3>
+                                        <p>Vous souhaitez un management actif et commplet de vos investissements pour un rendu personnel et optimisé.</p>
+                                    </div>
+                                </a>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+            </article>
+
+    
+        <!--Création d'un bandeau qui ammène à nous découvrire avec un CTL-->
+            <article>
+                <section class="conteneur">
+                    <div class="bandeau">
+                        <div>
+                            <h2 class="bandeau__titre">Vous voulez en savoir plus ?</h2>
+                            <p>Contactez-nous pour évaluer le service qui vous correspond le mieux avec l'un de nos professionnels. </br> Prenez rendez-vous maintenant, c'est gratuit et sans engagement</p>
+                        </div>    
+                        <a href="contact.html" class="bouton">Prendre rendez-vous</a>
+                    </div>
+                </section>
+            </article>
+
+            <article>
+                <!--création de la section.-->
+                <section class="section conteneur" aria-labelledby="avantages-title">
+                    <h2 class="section__titre">Nos engagements</h2>
+                        <!--Création du conteneur des 3 avantages-->
+                        <div class="arguments">
+                            <!--création de l'encadré du premier article-->
+                            <article class="avantage-card">
+                                <!--Le dessin-->
+                                <img src="../images/engagements_conformité.jpg" alt="Dessin d'un bouclier avec une validation en son centre" class="argument__image" loading="lazy">
+                                <!--Le text descriptif-->
+                                <div class="avantage__body">
+                                    <h2 class="argument__titre">Conformité au cadre légal <br>et certifié auprès de l'AMF</h2>
+                                    <p class="argument__texte">Nous exerçons notre activité dans le strict respect des réglementations en vigueur et sous le contrôle de l’AMF, vous garantissant une gestion sécurisée, transparente et certifiée.</p>
+                                </div>
+                            </article>
+
+                            <!--création de l'encadré du second article-->
+                            <article class="avantage-card">
+                                <!--Le dessin-->
+                                <img src="../images/engagements_interets.jpg" alt="Dessin d'un graphique avec une courbe qui augmente" class="argument__image" loading="lazy">
+                                <!--Le text descriptif-->
+                                <div class="avantage__body">
+                                    <h2 class="argument__titre">Vos intérêts guident nos décisions</h2>
+                                    <p class="argument__texte">Indépendants et à votre écoute, nous construisons des stratégies sur mesure où la protection et la valorisation de votre patrimoine restent notre unique priorité.</p>
+                                </div>
+                            </article>
+
+                            <!--création de l'encadré du torisième article-->
+                            <article class="avantage-card">
+                                <!--Le dessin-->
+                                <img src="../images/engagements_confidentialite.jpg" alt="Dessin de la silhouette d'une personne" class="argument__image" loading="lazy">
+                                <!--Le text descriptif-->
+                                <div class="avantage__body">
+                                   <h2 class="argument__titre">Confidentialité et sécurité</h2>
+                                    <p class="argument__texte">Le respect du secret professionnel et la protection de vos données financières sont absolus : nous vous garantissons une discrétion totale et des infrastructures technologiques hautement sécurisées.</p>
+                                </div>
+                            </article>
+                        </div>
+                </section>
+            </article>
+        </main>
+            
+        <footer class="conteneur section footer">
+            <p>Copyright 2026 Dimitri Jouet - Tous droits réservés</p>
+
+        </footer>
+    </body>
+</html>
