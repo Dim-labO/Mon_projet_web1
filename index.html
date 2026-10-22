@@ -11,15 +11,19 @@
     <!--Ensuite on va venir construire le header avec le titre et une liste qui permettra de créer le menu vers les différentes pages principales du sites
         On oubliera pas l'appel à l'action à la fin. Pour chaque partie on créé des balises pour faciliter le travail en CSS-->
     <body>
+        <a href="#contenu" class="lien-evitement">Aller au contenu principal</a>
+        <!--Première section qui constitue le header-->
         <header class="header">
+            <!--Création d'une div, qui contient 2 class CSS pour mettre en forme le header-->
             <div class="conteneur header__contenu">    
+                <!--On commence par mettre le lien avec un class pour intégrer le lien cliquable sur le nom de l'entreprise et le logo-->
                 <a href="index.html" class="header__logo">
-                    <img src="images/dessin_logo.png" alt="" class="header__logo-img">
+                    <img src="images/dessin_logo.png" alt="Le logo de Invest et vous, une montagne avec une flèche qui va vers le haut" class="header__logo-img">
                     <span class="header__logo-texte">Invest&amp;Vous</span>
                 </a>
                 <nav class="nav" aria-label="Navigation principale">
-                    <a href="index.html" class="nav__lien nav__lien--actif">Accueil</a>
-                    <a href="pages/qui-sommes-nous.html" class="nav__lien">Qui sommes nous ?</a>
+                    <a href="index.html" class="nav__lien" aria-current="page">Accueil</a>
+                    <a href="pages/qui-sommes-nous.html" class="nav__lien">Qui sommes-nous&nbsp;?</a>
                     <a href="pages/nos-offres.html" class="nav__lien">Nos offres</a>
                     <a href="pages/actus.html" class="nav__lien">Actus</a>
                     <a href="pages/ressources.html" class="nav__lien">Ressources</a>
@@ -29,18 +33,15 @@
             </div>
         </header>
 
-        <main>
+        <main id="contenu">
             <!--Création d'une section pour la première partie de la page : image de fond, texte marketing et un CTA-->
-            <article>
-                <section class="hero hero--accueil">
-                    <div class="conteneur">
-                        <h1 class="hero__majuscule">Investissement & Patrimoine</h1>
-                        <h2 class="hero__titre">Investir en 2026 n'est pas une option, c'est une nécessité</h2>
-                        <h3 class="hero__texte">Dans un monde en constante évolution, bien investir aujourd'hui, c'est se donner les moyens de réaliser ses projets de demain</h3>
-                        <a href="pages/ressources.html" class="bouton">Découvrir nos conseils</a>
-                    </div>
-                </section>
-            </article>
+            <section class="hero hero--accueil">
+                <div class="conteneur">
+                    <h1 class="hero__majuscule">Investissement &amp; Patrimoine</h1>
+                    <h2 class="hero__titre">Investir en 2026 n'est pas une option, c'est une nécessité</h2>
+                    <p class="hero__texte">Dans un monde en constante évolution, bien investir aujourd'hui, c'est se donner les moyens de réaliser ses projets de demain</p>
+                    <a href="pages/ressources.html" class="bouton">Découvrir nos conseils</a>                    </div>
+            </section>
 
             <!--création d'une collection des derniers articles à la une. -->
             <article>
@@ -61,11 +62,11 @@
                                 <!--Le lien-->
                                 <a href="/Actus/article-quels_scénarios_pour_la_fin_dannée.html">
                                     <!--L'image-->
-                                    <img src="images/quels_scénarios_pour_la_fin_dannée.jpg" alt="Description de l'image" class="carte__image" loading="lazy">
+                                    <img src="images/quels_scénarios_pour_la_fin_dannée.jpg" alt="Graphique de trading sur un écran, pointé du doigt par une main" class="carte__image" loading="lazy">
                                     <!--Le text descriptif-->
                                     <div class="carte__corps">
                                         <span class="carte__categorie">Economie</span>
-                                        <h3 class="carte__titre">Quels scénarios pour la fin de l'année ?</h3>
+                                        <h3 class="carte__titre">Quels scénarios pour la fin de l'année&nbsp;?</h3>
                                         <p class="carte__accueil__texte">« Alors que les marchés s'agitent, un rebond inattendu pourrait bien bouleverser vos... »</p>
                                         <p class="carte__lien__article">Lire l'article →</p>
                                     </div>
@@ -77,11 +78,11 @@
                                 <!--Le lien-->
                                 <a href="/Actus/article-dirigeons_nous_vers_un_krach_boursier.html">
                                 <!--L'image-->
-                                <img src="images/dirigeons_nous_vers_un_krach_boursier.jpg" alt="Description de l'image" class="carte__image" loading="lazy">
+                                <img src="images/dirigeons_nous_vers_un_krach_boursier.jpg" alt="Graphique de trading sur un écran avec 2 barres de volumes pointées du doigt par une main" class="carte__image" loading="lazy">
                                     <!--Le text descriptif-->
                                     <div class="carte__corps">
                                         <span class="carte__categorie">Marchés</span>
-                                        <h3 class="carte__titre">Dirigeons-nous vers un krach boursier ?</h3>
+                                        <h3 class="carte__titre">Dirigeons-nous vers un krach boursier&nbsp;?</h3>
                                         <p class="carte__accueil__texte">« Alors que les indices frôlent des sommets, ce signal d'alarme ignoré par la majorité des investisseurs... »</p>
                                         <p class="carte__lien__article">Lire l'article →</p>
                                     </div>
@@ -93,7 +94,7 @@
                                 <!--Le lien-->
                                 <a href="/Actus/article-vers_quels_nouveaux_sommets_pour_le_bitcoin.html">
                                     <!--L'image-->
-                                    <img src="images/vers_quels_nouveaux_sommets_pour_le_bitcoin.jpg" alt="Description de l'image" class="carte__image" loading="lazy">
+                                    <img src="images/vers_quels_nouveaux_sommets_pour_le_bitcoin.jpg" alt="Des pièces dorées avec un imprimé au symbole du bitcoin, éparpillées sur un clavier d'ordinateur" class="carte__image" loading="lazy">
                                     <!--Le text descriptif-->
                                     <div class="carte__corps">
                                         <span class="carte__categorie">Crypto</span>
@@ -109,11 +110,11 @@
                                 <!--Le lien-->
                                 <a href="/Actus/article-pertinent_dinvestir_dans_limmobilier_en_2026.html">
                                     <!--L'image-->
-                                    <img src="images/pertinent_dinvestir_ dans_limmobilier_en_2026.jpg" alt="Description de l'image" class="carte__image" loading="lazy">
+                                    <img src="images/pertinent_dinvestir_dans_limmobilier_en_2026.jpg" alt="Photo d'immeubles neufs" class="carte__image" loading="lazy">
                                     <!--Le text descriptif-->
                                     <div class="carte__corps">
                                         <span class="carte__categorie">Immobilier</span>
-                                        <h3 class="carte__titre">Pertinent d'investir dans l'immobilier en 2026 ?</h3>
+                                        <h3 class="carte__titre">Pertinent d'investir dans l'immobilier en 2026&nbsp;?</h3>
                                         <p class="carte__accueil__texte">« Malgré la baisse des taux, cette nouvelle réglementation fiscale va lourdement pénaliser les... »</p>
                                         <p class="carte__lien__article">Lire l'article →</p>
                                     </div>
@@ -184,5 +185,6 @@
         <footer class="conteneur section footer">
             <p>Copyright 2026 Dimitri Jouet - Tous droits réservés</p>
         </footer>
+        <script src="JavaScript/main.js" defer></script>
     </body>
 </html>

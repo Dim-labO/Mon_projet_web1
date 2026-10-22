@@ -10,102 +10,112 @@
      <!--Ensuite on va venir construire le header avec le titre et une liste qui permettra de créer le menu vers les différentes pages principales du sites
         On oubliera pas l'appel à l'action à la fin. Pour chaque partie on créé des balises pour faciliter le travail en CSS-->
     <body>
+        <a href="#contenu" class="lien-evitement">Aller au contenu principal</a>
         <header class="header">
             <div class="conteneur header__contenu">    
                 <a href="../index.html" class="header__logo">
-                    <img src="../images/dessin_logo.png" alt="" class="header__logo-img">
+                    <img src="../images/dessin_logo.png" alt="Le logo de Invest et vous, une montagne avec une flèche qui va vers le haut" class="header__logo-img">
                     <span class="header__logo-texte">Invest&amp;Vous</span>
                 </a>
                 <nav class="nav" aria-label="Navigation principale">
                     <a href="../index.html" class="nav__lien">Accueil</a>
-                    <a href="qui-sommes-nous.html" class="nav__lien">Qui sommes nous ?</a>
+                    <a href="qui-sommes-nous.html" class="nav__lien">Qui sommes-nous&nbsp;?</a>
                     <a href="nos-offres.html" class="nav__lien">Nos offres</a>
                     <a href="actus.html" class="nav__lien">Actus</a>
-                    <a href="ressources.html" class="nav__lien nav__lien--actif">Ressources</a>
+                    <a href="ressources.html" class="nav__lien" aria-current="page">Ressources</a>
                     <a href="contact.html" class="nav__lien">Contact</a>
                     <a href="contact.html" class="bouton">Prendre RDV</a> 
                 </nav>
             </div>
         </header>
 
-        <main>
+        <main id="contenu">
             <!--Création d'une section pour la première partie de la page : image de fond, texte marketing et un CTA-->
-            <article>
-                <section class="hero hero--ressources">
-                    <div class="conteneur">
-                        <h2 class="hero__titre">Ressources</h2>
-                        <h3 class="hero__texte">Tout ce qu'il faut savoir pour mieux investir<br> et bien gérer son patrimoine.</h3>
-                    </div>
-                </section>
-            </article>
-
+            <section class="hero hero--ressources">
+                <div class="conteneur">
+                    <h1 class="hero__titre">Ressources</h1>
+                    <p class="hero__texte">Tout ce qu'il faut savoir pour mieux investir<br> et bien gérer son patrimoine.</p>
+                </div>
+            </section>
+            
+            <!--Création des 4 boutons pour filtrer les ressources-->
+            <div id="filtres-collections" class="filtres conteneur" role="group" aria-label="Filtrer les ressources par collection">
+                <button class="filtre filtre--actif" type="button" data-collection="toutes" aria-pressed="true">Toutes les collections</button>
+                <button class="filtre" type="button" data-collection="bases" aria-pressed="true">Comprendre les bases</button>
+                <button class="filtre" type="button" data-collection="portefeuille" aria-pressed="true">Portefeuille équilibré</button>
+                <button class="filtre" type="button" data-collection="avance" aria-pressed="true">Aller plus loin</button>
+            </div>
 
             <!--Création de 3 collections ("Comprendre les bases", "Construire une portefeuille équilibré", "Aller plus loin")-->
             <!--Création de la première collection-->
-            <section class="section conteneur" aria-labelledby="parcours-titre">
-                <h2 id="parcours-titre" class="section__titre">Comprendre les bases</h2>
+            <section class="conteneur" aria-labelledby="comprendre-titre" data-collection="bases">
+                <h2 id="comprendre-titre" class="section__titre">Comprendre les bases</h2>
+
+                <!--Ajouter un bouton "en savoir plus" en JS-->
+                <button type="button" class="bouton-ressources bouton_encart">En savoir plus ↓</button>
+                <div class="encart-ressources encart--masque carte__texte">Cette collection vous aide à acquérir les fondamentaux de l'investissement avant de construire votre stratégie.</div>
 
                 <!--on rentre dans le le bloc inférieur avec l'ensemble des différentes ressources de la première collection-->
                 <div class="grille-articles">
 
                     <!--carte qu'est ce que l'investissement-->
                     <a href="/ressources/connaissances_linvestissement.html" class="carte carte_ressources">
-                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silouhette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
-                        <h3 class="ressources__titre">Qu'est-ce que l'investissement ?</h3>    
+                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silhouette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
+                        <h3 class="ressources__titre">Qu'est-ce que l'investissement&nbsp;?</h3>    
                     </a>
 
                     <!--carte qu'est ce que l'investissement-->
                     <a href="/ressources/connaissances_linvestissement.html" class="carte carte_ressources">
-                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silouhette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
+                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silhouette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
                         <h3 class="ressources__titre">La Finance</h3>    
                     </a>
 
                     <!--carte qu'est ce que l'investissement-->
                     <a href="/ressources/connaissances_linvestissement.html" class="carte carte_ressources">
-                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silouhette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
+                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silhouette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
                         <h3 class="ressources__titre">Poser des bases saines</h3>    
                     </a>
 
                     <!--carte qu'est ce que l'investissement-->
                     <a href="/ressources/connaissances_linvestissement.html" class="carte carte_ressources">
-                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silouhette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
+                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silhouette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
                         <h3 class="ressources__titre">Définir une stratégie et un plan d'investissement</h3>    
                     </a>
 
                     <!--carte qu'est ce que l'investissement-->
                     <a href="/ressources/connaissances_linvestissement.html" class="carte carte_ressources">
-                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silouhette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
+                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silhouette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
                         <h3 class="ressources__titre">Les règles d'or</h3>    
                     </a>
                   
                     <!--carte qu'est ce que l'investissement-->
                     <a href="/ressources/connaissances_linvestissement.html" class="carte carte_ressources">
-                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silouhette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
+                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silhouette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
                         <h3 class="ressources__titre">Portefeuille actif et passif</h3>    
                     </a>
                    
                     <!--carte qu'est ce que l'investissement-->
                     <a href="/ressources/connaissances_linvestissement.html" class="carte carte_ressources">
-                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silouhette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
+                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silhouette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
                         <h3 class="ressources__titre">Analyse fondamentale</h3>    
                     </a>
         
                     <!--carte qu'est ce que l'investissement-->
                     <a href="/ressources/connaissances_linvestissement.html" class="carte carte_ressources">
-                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silouhette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
+                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silhouette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
                         <h3 class="ressources__titre">Analyse technique</h3>    
                     </a>
                 
                     <!--carte qu'est ce que l'investissement-->
                     <a href="/ressources/connaissances_linvestissement.html" class="carte carte_ressources">
-                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silouhette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
-                        <h3 class="ressources__titre">Comment choisir l'actif ?</h3>    
+                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silhouette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
+                        <h3 class="ressources__titre">Comment choisir l'actif&nbsp;?</h3>    
                     </a>
                    
                     <!--carte qu'est ce que l'investissement-->
                     <a href="/ressources/connaissances_linvestissement.html" class="carte carte_ressources">
-                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silouhette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
-                        <h3 class="ressources__titre">Comment et où investir ?</h3>    
+                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silhouette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
+                        <h3 class="ressources__titre">Comment et où investir&nbsp;?</h3>    
                     </a>
                     
                 </div>
@@ -113,45 +123,49 @@
             </section>
 
             <!--Création de la première collection-->
-            <section class="conteneur" aria-labelledby="parcours-titre">
-                <h2 id="parcours-titre" class="section__titre">Construire un portefeuille équilibré</h2>
+            <section class=" section conteneur" aria-labelledby="portefeuille-titre" data-collection="portefeuille">
+                <h2 id="portefeuille-titre" class="section__titre">Construire un portefeuille équilibré</h2>
+
+                <!--Ajouter un bouton "en savoir plus" en JS-->
+                <button type="button" class="bouton-ressources bouton_encart">En savoir plus ↓</button>
+                <div class="encart-ressources encart--masque carte__texte">Cette collection vous aide à découvrir sur quoi il est possible d'investir.</div>
 
                 <!--on rentre dans le le bloc inférieur avec l'ensemble des différentes ressources de la première collection-->
                 <div class="grille-articles">
 
                     <!--carte qu'est ce que l'investissement-->
                     <a href="/ressources/connaissances_linvestissement.html" class="carte carte_ressources">
-                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silouhette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
+                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silhouette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
                         <h3 class="ressources__titre">Les ETF</h3>    
                     </a>
                     
                     <!--carte qu'est ce que l'investissement-->
                     <a href="/ressources/connaissances_linvestissement.html" class="carte carte_ressources">
-                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silouhette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
+                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silhouette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
                         <h3 class="ressources__titre">Les actions à fort potentiel</h3>    
                     </a>
                     
                     <!--carte qu'est ce que l'investissement-->
                     <a href="/ressources/connaissances_linvestissement.html" class="carte carte_ressources">
-                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silouhette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
+                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silhouette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
                         <h3 class="ressources__titre">Les matières premières</h3>    
                     </a>
                     
                     <!--carte qu'est ce que l'investissement-->
                     <a href="/ressources/connaissances_linvestissement.html" class="carte carte_ressources">
-                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silouhette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
+                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silhouette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
                         <h3 class="ressources__titre">Les cryptomonnaies</h3>    
                     </a>
                     
                     <!--carte qu'est ce que l'investissement-->
                     <a href="/ressources/connaissances_linvestissement.html" class="carte carte_ressources">
-                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silouhette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
+                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silhouette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
                         <h3 class="ressources__titre">Les autres investissements</h3>    
                     </a>
                     
                     <!--carte qu'est ce que l'investissement-->
                     <a href="/ressources/connaissances_linvestissement.html" class="carte carte_ressources">
-                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silouhette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
+                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silhouette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
                         <h3 class="ressources__titre">L'immobilier dans tout ça</h3>    
                     </a>
                    
@@ -160,34 +174,38 @@
             </section>
 
             <!--Création de la première collection-->
-            <section class="section conteneur" aria-labelledby="parcours-titre">
-                <h2 id="parcours-titre" class="section__titre">Aller plus loin</h2>
+            <section class="section conteneur" aria-labelledby="avance-titre" data-collection="avance">
+                <h2 id="avance-titre" class="section__titre">Aller plus loin</h2>
+
+                <!--Ajouter un bouton "en savoir plus" en JS-->
+                <button type="button" class="bouton-ressources bouton_encart">En savoir plus ↓</button>
+                <div class="encart-ressources encart--masque carte__texte">Cette collection vient compléter vos connaissances en investissement avec des tips importants.</div>
 
                 <!--on rentre dans le le bloc inférieur avec l'ensemble des différentes ressources de la première collection-->
                 <div class="grille-articles">
 
                     <!--carte qu'est ce que l'investissement-->
                     <a href="/ressources/connaissances_linvestissement.html" class="carte carte_ressources">
-                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silouhette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
+                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silhouette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
                         <h3 class="ressources__titre">L'intérêt des obligations</h3>    
                     </a>
          
                     <!--carte qu'est ce que l'investissement-->
                     <a href="/ressources/connaissances_linvestissement.html" class="carte carte_ressources">
-                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silouhette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
+                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silhouette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
                         <h3 class="ressources__titre">L'importance d'un portefeuille actif</h3>    
                     </a>
                     
                     <!--carte qu'est ce que l'investissement-->
                     <a href="/ressources/connaissances_linvestissement.html" class="carte carte_ressources">
-                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silouhette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
+                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silhouette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
                         <h3 class="ressources__titre">Choisir les bonnes plateformes d'investissement</h3>    
                     </a>
                     
                     <!--carte qu'est ce que l'investissement-->
                     <a href="/ressources/connaissances_linvestissement.html" class="carte carte_ressources">
-                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silouhette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
-                        <h3 class="ressources__titre">Comment bien acheter et bien vendre ?</h3>    
+                        <img src="../images/parcours_motivation.jpg" alt="Dessin de la silhouette du buste d'une personne entourée de flèches qui se suivent formant un cercle" class="argument__image" loading="lazy">
+                        <h3 class="ressources__titre">Comment bien acheter et bien vendre&nbsp;?</h3>    
                     </a>
                     
                 </div>              
@@ -201,14 +219,16 @@
                         <p>Les 10 clés pour bien investir en 2026</p>
                     </div>  
                     <!--pas encore fait-->  
-                    <a href="../pages/les_10_cles_pour_bien_investir_en_2026.docx" class="bouton" download>Télécharger ⤓</a>
+                    <a href="../pages/les_10_cles_pour_bien_investir_en_2026.docx" class="bouton" download>Télécharger (PDF, 1,2 Mo) ⤓</a>
                 </div>
             </section>
-
+        </main>
 
     <footer class="conteneur section footer">
             <p>Copyright 2026 Dimitri Jouet - Tous droits réservés</p>
 
         </footer>
+
+        <script src="../javascript/main.js" defer></script>
     </body>
 </html>

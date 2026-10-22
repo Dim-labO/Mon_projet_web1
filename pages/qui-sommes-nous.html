@@ -10,15 +10,16 @@
      <!--Ensuite on va venir construire le header avec le titre et une liste qui permettra de créer le menu vers les différentes pages principales du sites
         On oubliera pas l'appel à l'action à la fin. Pour chaque partie on créé des balises pour faciliter le travail en CSS-->
     <body>
+        <a href="#contenu" class="lien-evitement">Aller au contenu principal</a>
         <header class="header">
             <div class="conteneur header__contenu">    
                 <a href="../index.html" class="header__logo">
-                    <img src="../images/dessin_logo.png" alt="" class="header__logo-img">
+                    <img src="../images/dessin_logo.png" alt="Le logo de Invest et vous, une montagne avec une flèche qui va vers le haut" class="header__logo-img">
                     <span class="header__logo-texte">Invest&amp;Vous</span>
                 </a>
                 <nav class="nav" aria-label="Navigation principale">
                     <a href="../index.html" class="nav__lien">Accueil</a>
-                    <a href="qui-sommes-nous.html" class="nav__lien nav__lien--actif">Qui sommes nous ?</a>
+                    <a href="qui-sommes-nous.html" class="nav__lien" aria-current="page">Qui sommes-nous&nbsp;?</a>
                     <a href="nos-offres.html" class="nav__lien">Nos offres</a>
                     <a href="actus.html" class="nav__lien">Actus</a>
                     <a href="ressources.html" class="nav__lien">Ressources</a>
@@ -28,17 +29,15 @@
             </div>
         </header>
         
-        <main>
-            <!--Création d'une section pour la première partie de la page : image de fond, texte marketing et un CTA-->
-            <article>
-                <section class="hero hero--qui-sommes-nous">
-                    <div class="conteneur">
-                        <h2 class="hero__titre">Qui sommes-nous ?</h2>
-                        <h3 class="hero__texte">Notre expérience, nos valeurs et notre vision de l'investissement.</h3>
-                    </div>
-                </section>
-            </article>
-
+        <main id="contenu">
+            <!--Création d'une section pour la première partie de la page : image de fond, texte marketing et un CTA-->                
+            <section class="hero hero--qui-sommes-nous">
+                <div class="conteneur">
+                    <h1 class="hero__titre">Qui sommes-nous&nbsp;?</h1>
+                    <p class="hero__texte">Notre expérience, nos valeurs et notre vision de l'investissement.</p>
+                </div>
+            </section>
+           
             <!--création d'une collection pour présenter notre parcours -->
             <section class="section conteneur" aria-labelledby="parcours-titre">
                 <h2 id="parcours-titre" class="section__titre">Notre parcours</h2>
@@ -47,8 +46,7 @@
                     <!-- Colonne image -->
                     <div class="parcours__visuel">
                     <img src="../images/image_notre_parcours.JPEG"
-                     alt="Dessin d'une plage avec des montagnes au loin"
-                     loading="lazy">
+                     alt="Dessin d'une plage avec des montagnes au loin" loading="lazy">
                     </div>
 
                     <!-- Colonne texte -->
@@ -56,7 +54,7 @@
                         <div class="carte__corps">
 
                             <div class="parcours__point">
-                                <img src="../images/parcours_conseillers_diplomes.jpg" alt="" class="parcours__icone" loading="lazy">
+                                <img src="../images/parcours_conseillers_diplomes.jpg" alt="Flèches formant un cercle autour de la silouhette du buste d'une personne" class="parcours__icone" loading="lazy">
                                 <div>
                                     <h3 class="carte__titre">Chacun de nos 10 conseillers est diplômé d'État, avec des certifications de spécialisation</h3>
                                     <p class="carte__texte">Ingénierie patrimoniale et juridique, optimisation fiscale, placements financiers, immobilier, chef d'entreprise, gestion privée.</p>
@@ -64,7 +62,7 @@
                             </div>
 
                             <div class="parcours__point">
-                                <img src="../images/parcours_experience.jpg" alt="" class="parcours__icone" loading="lazy">
+                                <img src="../images/parcours_experience.jpg" alt="Dessin d'un oeil" class="parcours__icone" loading="lazy">
                                 <div>
                                     <h3 class="carte__titre">Plus de 10 ans d'expérience dans la gestion de patrimoine</h3>
                                     <p class="carte__texte">Plus de 200 clients et 50 millions d'actifs sous gestion.</p>
@@ -72,9 +70,9 @@
                             </div>
 
                             <div class="parcours__point">
-                                <img src="../images/parcours_notre_reussite.jpg" alt="" class="parcours__icone" loading="lazy">
+                                <img src="../images/parcours_notre_reussite.jpg" alt="Une main paume vers le haut, qui contient les silouhettes du buste de 3 personnes" class="parcours__icone" loading="lazy">
                                 <div>
-                                    <h3 class="carte__titre">Notre critère de réussite : </br>combien fait-on gagner à nos clients ?</h3>
+                                    <h3 class="carte__titre">Notre critère de réussite : <br>combien fait-on gagner à nos clients&nbsp;?</h3>
                                     <p class="carte__texte">90 % de nos clients gagnent entre 8 et 12 % d'intérêts par an.</p>
                                 </div>
                             </div>
@@ -132,7 +130,7 @@
                 <section class="conteneur">
                     <div class="bandeau__qui_sommes_nous">
                             <p class="bandeau__guillemet">"</p>
-                            <p class="bandeau__qui__citation">"Je crois en une finance utile, qui soutient vos projets de vie </br> et contribue à un avenir plus serein"</p>
+                            <p class="bandeau__qui__citation">"Je crois en une finance utile, qui soutient vos projets de vie <br> et contribue à un avenir plus serein"</p>
                             <p class="bandeau__qui__auteur">Quentin Le Loup, PDG de Invest&Vous</p>   
                     </div>
                 </section>

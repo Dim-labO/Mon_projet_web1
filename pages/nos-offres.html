@@ -10,16 +10,17 @@
      <!--Ensuite on va venir construire le header avec le titre et une liste qui permettra de créer le menu vers les différentes pages principales du sites
         On oubliera pas l'appel à l'action à la fin. Pour chaque partie on créé des balises pour faciliter le travail en CSS-->
     <body>
+        <a href="#contenu" class="lien-evitement">Aller au contenu principal</a>
         <header class="header">
             <div class="conteneur header__contenu">    
                 <a href="../index.html" class="header__logo">
-                    <img src="../images/dessin_logo.png" alt="" class="header__logo-img">
+                    <img src="../images/dessin_logo.png" alt="Le logo de Invest et vous, une montagne avec une flèche qui va vers le haut" class="header__logo-img">
                     <span class="header__logo-texte">Invest&amp;Vous</span>
                 </a>
                 <nav class="nav" aria-label="Navigation principale">
                     <a href="../index.html" class="nav__lien">Accueil</a>
-                    <a href="qui-sommes-nous.html" class="nav__lien">Qui sommes nous ?</a>
-                    <a href="nos-offres.html" class="nav__lien nav__lien--actif">Nos offres</a>
+                    <a href="qui-sommes-nous.html" class="nav__lien">Qui sommes-nous&nbsp;?</a>
+                    <a href="nos-offres.html" class="nav__lien" aria-current="page">Nos offres</a>
                     <a href="actus.html" class="nav__lien">Actus</a>
                     <a href="ressources.html" class="nav__lien">Ressources</a>
                     <a href="contact.html" class="nav__lien">Contact</a>
@@ -28,16 +29,14 @@
             </div>
         </header>
 
-        <main>
+        <main id="contenu">
             <!--Création d'une section pour la première partie de la page : image de fond, texte marketing et un CTA-->
-            <article>
-                <section class="hero hero--nos-offres">
-                    <div class="conteneur">
-                        <h2 class="hero__titre">Nos services</h2>
-                        <h3 class="hero__texte">Créés pour votre réussite financière</br>Développez passivement votre patrimoine </br> Profitez de votre liberté !</h3>
-                    </div>
-                </section>
-            </article>
+            <section class="hero hero--nos-offres">
+                <div class="conteneur">
+                    <h1 class="hero__titre">Nos services</h1>
+                    <p class="hero__texte">Créés pour votre réussite financière<br>Développez passivement votre patrimoine <br> Profitez de votre liberté&nbsp;!</p>
+                </div>
+            </section>
 
             <!--création d'une collection des derniers articles à la une. -->
             <article>
@@ -58,7 +57,7 @@
                                 <!--Le lien-->
                                 <a href="/nos-offres/consulting.html">
                                     <!--L'image-->
-                                    <img src="../images/image_consulting.jpg" alt="Description de l'image" class="carte__image" loading="lazy">
+                                    <img src="../images/image_consulting.jpg" alt="Une personne qui montre à une autre personne la chart d'un actif sur un ordinateur" class="carte__image" loading="lazy">
                                     <!--Le text descriptif-->
                                     <div class="carte__corps">
                                         <h3 class="carte__titre">Consulting<br><br></h3>
@@ -72,7 +71,7 @@
                                 <!--Le lien-->
                                 <a href="/nos-offres/bilan_patrimonial.html">
                                 <!--L'image-->
-                                <img src="../images/image_bilan_patrimonial.jpg" alt="Description de l'image" class="carte__image" loading="lazy">
+                                <img src="../images/image_bilan_patrimonial.jpg" alt="Une calcultrice sur un carnet de note" class="carte__image" loading="lazy">
                                     <!--Le text descriptif-->
                                     <div class="carte__corps">
                                         <h3 class="carte__titre">Bilan patrimonial<br><br></h3>
@@ -86,7 +85,7 @@
                                 <!--Le lien-->
                                 <a href="/nos-offres/integrer_le_fond_dinvestissement.html">
                                     <!--L'image-->
-                                    <img src="../images/image_integrer_le_fond_dinvestissement.jpg" alt="Description de l'image" class="carte__image" loading="lazy">
+                                    <img src="../images/image_integrer_le_fond_dinvestissement.jpg" alt="Courbe d'un actif sur un écran" class="carte__image" loading="lazy">
                                     <!--Le text descriptif-->
                                     <div class="carte__corps">
                                         <h3 class="carte__titre">Intégrer notre fond d'investissement</h3>
@@ -100,7 +99,7 @@
                                 <!--Le lien-->
                                 <a href="/nos-offres/gestion_patrimonial_individuelle.html">
                                     <!--L'image-->
-                                    <img src="../images/image_gestion_patrimonial_individuelle.jpg" alt="Description de l'image" class="carte__image" loading="lazy">
+                                    <img src="../images/image_gestion_patrimonial_individuelle.jpg" alt="Personne focus sur son travail" class="carte__image" loading="lazy">
                                     <!--Le text descriptif-->
                                     <div class="carte__corps">
                                         <h3 class="carte__titre">Gestion patrimonial individuelle</h3>
@@ -119,8 +118,8 @@
                 <section class="conteneur">
                     <div class="bandeau">
                         <div>
-                            <h2 class="bandeau__titre">Vous voulez en savoir plus ?</h2>
-                            <p>Contactez-nous pour évaluer le service qui vous correspond le mieux avec l'un de nos professionnels. </br> Prenez rendez-vous maintenant, c'est gratuit et sans engagement</p>
+                            <h2 class="bandeau__titre">Vous voulez en savoir plus&nbsp;?</h2>
+                            <p>Contactez-nous pour évaluer le service qui vous correspond le mieux avec l'un de nos professionnels. <br> Prenez rendez-vous maintenant, c'est gratuit et sans engagement</p>
                         </div>    
                         <a href="contact.html" class="bouton">Prendre rendez-vous</a>
                     </div>
@@ -136,7 +135,7 @@
                             <!--création de l'encadré du premier article-->
                             <article class="avantage-card">
                                 <!--Le dessin-->
-                                <img src="../images/engagements_conformité.jpg" alt="Dessin d'un bouclier avec une validation en son centre" class="argument__image" loading="lazy">
+                                <img src="../images/engagements_conformité.jpg" alt="Dessin d'une feuille avec un label de certification" class="argument__image" loading="lazy">
                                 <!--Le text descriptif-->
                                 <div class="avantage__body">
                                     <h2 class="argument__titre">Conformité au cadre légal <br>et certifié auprès de l'AMF</h2>
@@ -147,7 +146,7 @@
                             <!--création de l'encadré du second article-->
                             <article class="avantage-card">
                                 <!--Le dessin-->
-                                <img src="../images/engagements_interets.jpg" alt="Dessin d'un graphique avec une courbe qui augmente" class="argument__image" loading="lazy">
+                                <img src="../images/engagements_interets.jpg" alt="Dessin d'une boussole" class="argument__image" loading="lazy">
                                 <!--Le text descriptif-->
                                 <div class="avantage__body">
                                     <h2 class="argument__titre">Vos intérêts guident nos décisions</h2>
@@ -158,7 +157,7 @@
                             <!--création de l'encadré du torisième article-->
                             <article class="avantage-card">
                                 <!--Le dessin-->
-                                <img src="../images/engagements_confidentialite.jpg" alt="Dessin de la silhouette d'une personne" class="argument__image" loading="lazy">
+                                <img src="../images/engagements_confidentialite.jpg" alt="Dessin d'un ordinateur avec un cadenas" class="argument__image" loading="lazy">
                                 <!--Le text descriptif-->
                                 <div class="avantage__body">
                                    <h2 class="argument__titre">Confidentialité et sécurité</h2>

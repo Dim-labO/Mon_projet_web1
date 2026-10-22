@@ -10,10 +10,11 @@
      <!--Ensuite on va venir construire le header avec le titre et une liste qui permettra de créer le menu vers les différentes pages principales du sites
         On oubliera pas l'appel à l'action à la fin. Pour chaque partie on créé des balises pour faciliter le travail en CSS-->
     <body>
+        <a href="#contenu" class="lien-evitement">Aller au contenu principal</a>
         <header class="header">
             <div class="conteneur header__contenu">    
                 <a href="../index.html" class="header__logo">
-                    <img src="../images/dessin_logo.png" alt="" class="header__logo-img">
+                    <img src="../images/dessin_logo.png" alt="Le logo de Invest et vous, une montagne avec une flèche qui va vers le haut" class="header__logo-img">
                     <span class="header__logo-texte">Invest&amp;Vous</span>
                 </a>
                 <nav class="nav" aria-label="Navigation principale">
@@ -22,20 +23,20 @@
                     <a href="nos-offres.html" class="nav__lien">Nos offres</a>
                     <a href="actus.html" class="nav__lien">Actus</a>
                     <a href="ressources.html" class="nav__lien">Ressources</a>
-                    <a href="contact.html" class="nav__lien nav__lien--actif">Contact</a>
+                    <a href="contact.html" class="nav__lien" aria-current="page">Contact</a>
                     <a href="contact.html" class="bouton">Prendre RDV</a> 
                 </nav>
             </div>
         </header>
 
-        <main>
+        <main id="contenu">
             <!--Création d'une section pour la première partie de la page : image de fond, texte marketing et un CTA-->
-                <section class="hero hero--contact">
-                    <div class="conteneur">
-                        <h2 class="hero__titre">Contactez-nous</h2>
-                        <h3 class="hero__texte">Prenons rendez-vous pour faire le point sur votre situation et définir ensemble votre stratégie</h3>
-                    </div>
-                </section>
+            <section class="hero hero--contact">
+                <div class="conteneur">
+                    <h1 class="hero__titre">Contactez-nous</h1>
+                    <p class="hero__texte">Prenons rendez-vous pour faire le point sur votre situation et définir ensemble votre stratégie</p>
+                </div>
+            </section>
 
 
                 <section class="section conteneur">
@@ -135,7 +136,7 @@
         <footer class="footer__contact">
             <div class="conteneur footer__contact__contenu">    
                 <a href="../index.html" class="footer__contact__logo">
-                    <img src="../images/dessin_logo.png" alt="" class="footer__contact__logo-img">
+                    <img src="../images/dessin_logo.png" alt="Le logo de Invest et vous, une montagne avec une flèche qui va vers le haut" class="footer__contact__logo-img">
                     <span class="footer__contact__logo-texte">Invest&amp;Vous</span>
                 </a>
                 <nav class="nav" aria-label="Navigation principale">
@@ -144,7 +145,7 @@
                     <a href="nos-offres.html" class="nav__lien">Nos offres</a>
                     <a href="actus.html" class="nav__lien">Actus</a>
                     <a href="ressources.html" class="nav__lien">Ressources</a>
-                    <a href="contact.html" class="nav__lien">Contact</a>
+                    <a href="contact.html" class="nav__lien" aria-current="page">Contact</a>
                     <a href="https://www.linkedin.com" class="nav__lien" target="_blank" rel="noopener noreferrer">
                         <img src="../images/linkedin_logo.png" alt="Logo de Linkedin" class="footer__contact__logo-img">
                     </a>
