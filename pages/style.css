@@ -654,6 +654,52 @@ h1, h2, h3 { margin: 0; }
   display: none;
 }
 
+/* Java-script contact*/
+.infomail--masque {
+  display: none;
+}
+
+.infonom--masque {
+  display: none;
+}
+
+.infoprenom--masque {
+  display: none;
+}
+
+.infotel--masque {
+  display: none;
+}
+
+.confirmation--masque {
+  display: none;
+}
+
+.confirmation {
+  font-size: 0.8rem;
+  color: var(--vert-principal);
+}
+
+.nomobligatoire {
+  font-size: 0.7rem;
+  color: #a31f1f;
+}
+
+.prenomobligatoire {
+  font-size: 0.7rem;
+  color: #a31f1f;
+}
+
+.emailobligatoire {
+  font-size: 0.7rem;
+  color: #a31f1f;
+}
+
+.telobligatoire {
+  font-size: 0.7rem;
+  color: #a31f1f;
+}
+
 /*Media Queries*/
 @media (min-width: 768px) {
   .grille-articles { grid-template-columns: repeat(2, 1fr); }
