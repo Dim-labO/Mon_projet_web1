@@ -199,20 +199,69 @@ const formulaire = document.querySelector(".formulaire")
 const confirmationEnvoi = document.querySelector(".confirmation"); 
 
 //Quand l'utilisateur click sur le bouton submit, JS comprend que le formulaire est envoyé
-formulaire.addEventListener("submit", function(event) {
+formulaire.addEventListener("submit", async function(event) {
     console.log("La fonction submit est exécutée");
     // Le navigateur ne poursuit pas l'envoi classique du formulaire.
     event.preventDefault();
    
     //Quand l'utilisateur a bien rempli le formulaire, un message de validation va apparaître
     if (formulaire.checkValidity()) {
-        confirmationEnvoi.classList.remove("confirmation--masque");
+        //Faire en sorte que JS récupère les 7 informations importantes pour ensuite les exploiter
+        const nomSaisie = document.querySelector("#nom").value
+        const prenomSaisie = document.querySelector("#prenom").value
+        const emailSaisie = document.querySelector("#email").value
+        const telSaisie = document.querySelector("#tel").value
+        const objetSaisie = document.querySelector("#objet").value
+        const dateSaisie = document.querySelector("#date").value
+        const messageSaisie = document.querySelector("#message").value
+
+        //Créer un objet pour rassembler plusieurs informations sous forme de paires clés-valeur
+        const donneesContact = {
+        nom: nomSaisie,
+        prenom: prenomSaisie,
+        email: emailSaisie,
+        telephone: telSaisie,
+        objet: objetSaisie,
+        date: dateSaisie,
+        message: messageSaisie
+        };
+
+        //On tente d'envoyer les infos au serveur 
+        try {
+
+            //Envoyer les données au serveur (attendre que le serveur réponde)
+            const reponse = await fetch("http://localhost:3000/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                //Transforme l'objet JS en JSON pour le transmettre
+                body: JSON.stringify(donneesContact)
+            });
+
+            //Si la demande a bien été reçue par le serveur afficher la confirmation à l'utilisateur + message dans la console
+            if (reponse.ok) {
+            console.log("La demande a bien été reçue par le serveur");
+
+            confirmationEnvoi.classList.remove("confirmation--masque");
+            } 
+            
+            //Autrement ne pas confirmer l'envoie des données + message dans la console
+            else {
+            console.log("Une erreur est survenue lors de l'envoi");
+
+            confirmationEnvoi.classList.add("confirmation--masque");
+            }
+        }
+
+        //On gère l'erreur si l'envoi échoue
+        catch (erreur) {
+            console.error("Erreur lors de l'envoi :", erreur);
+            
+            confirmationEnvoi.classList.add("confirmation--masque");
+        }
     } 
-    //Autrement rien n'apparaît 
-    else {
-        confirmationEnvoi.classList.add("confirmation--masque");
-    }
-    
+        
 });
 
 //Enlever le message de confirmation si l'utilisateur modifie un des champs 
@@ -252,28 +301,3 @@ boutonRessources.addEventListener("click", function () {
         boutonRessources.textContent = "Réduire ↑";
     }
 }); */
-
-
-/*    //Faire en sorte que JS récupère les 7 informations importantes pour ensuite les exploiter
-    const nomSaisie = document.querySelector("#nom").value
-    const prenomSaisie = document.querySelector("#prenom").value
-    const emailSaisie = document.querySelector("#email").value
-    const telSaisie = document.querySelector("#tel").value
-    const objetSaisie = document.querySelector("#objet").value
-    const dateSaisie = document.querySelector("#date").value
-    const messageSaisie = document.querySelector("#message").value
-
-    //Créer un objet pour rassembler plusieurs informations sous forme de paires clés-valeur
-    const donneesContact = {
-    nom: nomSaisie,
-    prenom: prenomSaisie,
-    email: emailSaisie,
-    telephone: telSaisie,
-    objet: objetSaisie,
-    date: dateSaisie,
-    message: messageSaisie
-    };
-
-    const champsValide = document.querySelector(".champsobligatoires");
-    const mailValide = document.querySelector(".emailobligatoire");
-    const telValide = document.querySelector(".telobligatoire");  */
