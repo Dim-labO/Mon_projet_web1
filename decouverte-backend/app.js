@@ -4,11 +4,14 @@ const express = require("express");
 //Création de l'application Express
 const app = express();
 
+//Ajouter un middleware qui autorisera les échanges cross-origin (entre le back et le front)
+const cors = require("cors");
+
+//On va pouvoir récupérer directement les propriétés de l'objet grâce à cette constante (destructuration)
+const { db, insertContact } = require("./database");
+
 //Ajouter un middleware pour lire les données envoyées par les utilisateurs via le formulaire en JSON (transforme les données en objet JS)
 app.use(express.json());
-
-//Ajouter une middleware qui autorisera les échanges cross-origin (entre le back et le front)
-const cors = require("cors");
 
 //Utilisation de cors
 app.use(cors());
@@ -70,18 +73,18 @@ app.post("/contact", function(req, res) {
     };
 
     // La date est facultative
-    if (donnees.date !== "") {
+    if (donnees.date && donnees.date !== "") {
 
-        // Vérifier le format JJ/MM/AAAA
-        const formatDateValide = /^\d{2}\/\d{2}\/\d{4}$/.test(donnees.date);
+        // Vérifier le format AAAA/MM/JJ
+        const formatDateValide = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$/.test(donnees.date);
 
         if (!formatDateValide) {
-            res.status(400).send("Le format de la date doit être JJ/MM/AAAA");
+            res.status(400).send("Le format de la date doit être AAAA-MM-JJ");
             return;
         }
 
         // Séparer le jour, le mois et l'année
-        const [jour, mois, annee] = donnees.date.split("/").map(Number);
+        const [annee, mois, jour] = donnees.date.split("-").map(Number);
 
         // Créer une date JavaScript
         const date = new Date(annee, mois - 1, jour);
@@ -98,14 +101,32 @@ app.post("/contact", function(req, res) {
         }
     }
 
-    //Afficher les données reçues dans le terminal
-    console.log("Données reçues :", donnees);
+    //try et catch permettent de gérer une eventuelle erreur sans laisser notre serveur planter
+    try {
+        // Enregistrer le contact dans SQLite
+        const resultat = insertContact.run({
+            nom: donnees.nom.trim(),
+            prenom: donnees.prenom.trim(),
+            email: donnees.email.trim(),
+            telephone: donnees.telephone.trim(),
+            objet: donnees.objet.trim(),
+            date: donnees.date || null,
+            message: donnees.message.trim()
+        });
 
-    //Retourner une réponse au format JSON avec le statut HTTP 201
-    res.status(201).json({
-        message: "Demande de contact reçues",
-        donnees: donnees
-    });
+        // Confirmer l'enregistrement
+        res.status(201).json({
+            message: "Demande de contact enregistrée",
+            id: Number(resultat.lastInsertRowid)
+        });
+
+    } 
+    
+    catch (erreur) {
+        console.error("Erreur lors de l'enregistrement :", erreur);
+
+        res.status(500).send("Une erreur est survenue lors de l'enregistrement");
+    }
 });
 
 //Création d'une route pour les requêtes qui ne correspondent à aucune route
